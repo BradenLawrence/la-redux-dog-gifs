@@ -32,6 +32,12 @@ const newPupForm = document.getElementById('new-pup-form')
 const ADD_PUP = 'ADD_PUP'
 
 // Submits form and dispatches add action
+const addNewPup = (pupObj) => {
+  return {
+    type: ADD_PUP,
+    newPup: pupObj
+  }
+}
 
 newPupForm.addEventListener('submit', () => {
   event.preventDefault();
@@ -40,12 +46,7 @@ newPupForm.addEventListener('submit', () => {
   document.getElementById('gif-url').value = ''
   document.getElementById('gif-rating').value = ''
   const newPup = { url: gifUrl, rating: gifRating }
-  store.dispatch(
-    {
-      type: ADD_PUP,
-      newPup: newPup
-    }
-  )
+  store.dispatch(addNewPup(newPup))
 })
 
 // Sets up store
