@@ -5,6 +5,10 @@ const initialState = {
     {
       rating: '5',
       url: 'https://media.giphy.com/media/O3iWjzootMuQw/giphy.gif'
+    },
+    {
+      rating: '5000',
+      url: 'https://media.giphy.com/media/Xev2JdopBxGj1LuGvt/giphy.gif'
     }
   ]
 }
