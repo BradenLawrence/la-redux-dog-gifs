@@ -12,7 +12,15 @@ const initialState = {
 // Reducer
 
 const gifReducer = (state = initialState, action) => {
-  // ...fill in your Reducer code here
+  switch(action.type) {
+    case ADD_PUP:
+      const newPupList = state.pups.concat(action.newPup)
+      return Object.assign({}, state, {
+        pups: newPupList
+      })
+    default:
+      return state
+  }
 }
 
 // JS to access new pup form
