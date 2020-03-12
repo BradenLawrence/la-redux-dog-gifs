@@ -54,3 +54,16 @@ const store = createStore(gifReducer);
 
 // Renders list of gifs to page
 const gifList = document.getElementById('gif-list')
+const render = () => {
+  let pupTiles = store.getState().pups.map(pup => {
+    return (`
+      <li>
+        <img src="${pup.url}"/>
+        <p>Rating: ${pup.rating}</p>
+      </li>
+    `)
+  })
+  gifList.innerHTML = pupTiles.join('')
+}
+render()
+store.subscribe(render)
